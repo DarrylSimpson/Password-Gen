@@ -12,8 +12,16 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialCharacters = " !@#$%^&*()+<=>?{][}|`~_-/;:";
 
-
-
+function getPasswordOptions() {
+  //variable to store the length of password from user input
+  var length = parseInt(
+  prompt('How many characters would you like your password to contain?'));
+ 
+  if (length < 8 || length > 128) {
+    alert("Please provide a number between 8 and 128.");
+    return getPasswordOptions();
+  }
+}
 
 // Assignment code here
 
