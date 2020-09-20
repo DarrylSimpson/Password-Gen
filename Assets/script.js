@@ -63,6 +63,11 @@ function generatePassword(){
 
   }
 
+  
+  for (let i = 0; i < userInput.length; i++) {
+  userFinalPassword += passwordPossibilities.charAt(Math.floor(Math.random() * passwordPossibilities.length));
+  }
+  
   return userFinalPassword;
   
   
