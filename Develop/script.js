@@ -1,3 +1,20 @@
+//Create a function that returns to a user a randomized password
+//Generate random string of characters
+//when button is clicked prompts pop up to ask the user password criteria
+//prompt for length of password at least 8 characters no more than 128
+//prompt for character type, lowercase, uppercase, numeric, and/or special characters
+//at least one character type should be selected
+//when all prompts are ansered, then password is generated using the info from prompts
+//display password in alert or WRITTEN TO THE HTML
+
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var specialCharacters = " !@#$%^&*()+<=>?{][}|`~_-/;:";
+
+
+
+
 // Assignment code here
 
 
