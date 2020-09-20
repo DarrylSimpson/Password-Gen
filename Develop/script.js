@@ -21,7 +21,35 @@ function getPasswordOptions() {
     alert("Please provide a number between 8 and 128.");
     return getPasswordOptions();
   }
+
+  var hasSpecialCharacters = confirm(
+  'Click OK to include special characters.'
+);
+  
+  var hasNumericCharacters = confirm(
+  'Click OK to include special characters.'
+);
+  var hasLowerCasedCharacters = confirm(
+  'Click OK to include special characters.'
+);
+  var hasUpperCasedCharacters = confirm(
+  'Click OK to include special characters.'
+);
+
+//Object to store user input
+  var finalPassword = {
+  length: length,
+  hasSpecialCharacters: hasSpecialCharacters,
+  hasNumericCharacters: hasNumericCharacters,
+  hasLowerCasedCharacters: hasLowerCasedCharacters,
+  hasUpperCasedCharacters: hasUpperCasedCharacters
+};
+
+return finalPassword;
+
+
 }
+
 
 // Assignment code here
 
