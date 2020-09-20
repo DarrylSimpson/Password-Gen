@@ -1,55 +1,72 @@
-//Create a function that returns to a user a randomized password
-//Generate random string of characters
-//when button is clicked prompts pop up to ask the user password criteria
-//prompt for length of password at least 8 characters no more than 128
-//prompt for character type, lowercase, uppercase, numeric, and/or special characters
-//at least one character type should be selected
-//when all prompts are ansered, then password is generated using the info from prompts
-//display password in alert or WRITTEN TO THE HTML
+//function that gets user input and gives it to generate function
 
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "0123456789";
-var specialCharacters = " !@#$%^&*()+<=>?{][}|`~_-/;:";
-
-function getPasswordOptions() {
+function generatePasswordDetails() {
   //variable to store the length of password from user input
   var length = parseInt(
   prompt('How many characters would you like your password to contain?'));
- 
-  if (length < 8 || length > 128) {
+
+  //if length is less than 8 or more than 128 make an alert, and then run it again
+  if (length < 8 || length > 128 || isNaN(length)) {
     alert("Please provide a number between 8 and 128.");
-    return getPasswordOptions();
+
+    return generatePasswordDetails;
   }
+
+  //confirm if you want to include 
 
   var hasSpecialCharacters = confirm(
   'Click OK to include special characters.'
-);
-  
-  var hasNumericCharacters = confirm(
-  'Click OK to include special characters.'
-);
-  var hasLowerCasedCharacters = confirm(
-  'Click OK to include special characters.'
-);
-  var hasUpperCasedCharacters = confirm(
-  'Click OK to include special characters.'
-);
+  );
 
-//Object to store user input
-  var finalPassword = {
+  var hasNumericCharacters = confirm(
+  'Click OK to include numeric characters.'
+  );
+
+  var hasLowerCasedCharacters = confirm(
+  'Click OK to include lower case characters.'
+  );
+
+  var hasUpperCasedCharacters = confirm(
+  'Click OK to include upper case characters.'
+  );
+
+  //Object to store user input
+
+  var password = {
   length: length,
   hasSpecialCharacters: hasSpecialCharacters,
   hasNumericCharacters: hasNumericCharacters,
   hasLowerCasedCharacters: hasLowerCasedCharacters,
   hasUpperCasedCharacters: hasUpperCasedCharacters
-};
+  };
 
-return finalPassword;
-
-
+  
+  return password;
 }
 
+//function that generates password based on user options
+function generatePassword(){
+
+  //arrays to declare what the generate function will pick from if the user wants that option
+
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numbers = "0123456789";
+  var specialCharacter = " !@#$%^&*()+<=>?{][}|`~_-/;:";
+
+  var userFinalPassword = '';
+  var userInput = generatePasswordDetails();
+  var passwordPossibilities = '';
+
+  if(userInput.hasLowerCasedCharacters){
+    passwordPossibilities += lowerCase;
+
+  }
+
+  return userFinalPassword;
+  
+  
+  }
 
 // Assignment code here
 
