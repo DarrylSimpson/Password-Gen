@@ -62,10 +62,22 @@ function generatePassword(){
     passwordPossibilities += lowerCase;
 
   }
+  if(userInput.hasUpperCasedCharacters){
+    passwordPossibilities += upperCase;
+
+  }
+  if(userInput.hasNumericCharacters){
+    passwordPossibilities += numbers;
+
+  }
+  if(userInput.hasSpecialCharacters){
+    passwordPossibilities += specialCharacter;
+
+  }
 
   
   for (i = 0; i < userInput.length; i++) {
-  userFinalPassword += passwordPossibilities.lowerCase(Math.floor(Math.random() * passwordPossibilities.length));
+  userFinalPassword += passwordPossibilities(Math.floor(Math.random() * passwordPossibilities.length));
   }
   
   return userFinalPassword;
