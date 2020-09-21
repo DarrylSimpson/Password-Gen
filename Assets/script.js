@@ -48,11 +48,11 @@ function generatePasswordDetails() {
 function generatePassword(){
 
   //arrays to declare what the generate function will pick from if the user wants that option
-
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var specialCharacter = " !@#$%^&*()+<=>?{][}|`~_-/;:";
+  
+  lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  numbers = "0123456789";
+  specialCharacter = " !@#$%^&*()+<=>?{][}|`~_-/;:";
 
   var userFinalPassword = '';
   var userInput = generatePasswordDetails();
@@ -63,6 +63,10 @@ function generatePassword(){
 
   }
 
+  
+  for (i = 0; i < userInput.length; i++) {
+  userFinalPassword += passwordPossibilities.lowerCase(Math.floor(Math.random() * passwordPossibilities.length));
+  }
   
   return userFinalPassword;
   
