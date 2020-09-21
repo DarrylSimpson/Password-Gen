@@ -21,9 +21,9 @@
 
 ## Images of the Page
 
-![ScreenShot1of3](./assets/images/image01.png)
-![ScreenShot1of3](./assets/images/image02.png)
-![ScreenShot1of3](./assets/images/image03.png)
+![ScreenShot1of3](./images/image01.png)
+![ScreenShot1of3](./images/image02.png)
+![ScreenShot1of3](./images/image03.png)
 
 
 
