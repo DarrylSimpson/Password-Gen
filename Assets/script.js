@@ -54,31 +54,41 @@ function generatePassword(){
   numbers = "0123456789";
   specialCharacter = " !@#$%^&*()+<=>?{][}|`~_-/;:";
 
+  //empty strings to store the user selections
+
   var userFinalPassword = '';
   var userInput = generatePasswordDetails();
   var passwordPossibilities = '';
+
+  //conditional statements, if userInput true for a prompt then add corresponding prompt to password variable
 
   if(userInput.hasLowerCasedCharacters){
     passwordPossibilities += lowerCase;
 
   }
+
   if(userInput.hasUpperCasedCharacters){
     passwordPossibilities += upperCase;
 
   }
+
   if(userInput.hasNumericCharacters){
     passwordPossibilities += numbers;
 
   }
+
   if(userInput.hasSpecialCharacters){
     passwordPossibilities += specialCharacter;
 
   }
 
-  
+  //adding a random selection from password possibilites to final password
+
   for (i = 0; i < userInput.length; i++) {
-  userFinalPassword += passwordPossibilities(Math.floor(Math.random() * passwordPossibilities.length));
+  userFinalPassword += passwordPossibilities.charAt(Math.floor(Math.random() * passwordPossibilities.length));
   }
+  
+  //pushing the randomized password to finalpassword
   
   return userFinalPassword;
   
